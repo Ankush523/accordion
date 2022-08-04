@@ -7,11 +7,18 @@ import data from './components/data'
 function App() {
 
   const[questions,setQuestions] = useState(data)
+
   return (
     <div className="App">
         <h2>Questions</h2>
         <div>
-          
+          {
+            questions.map((question) => {
+              return (
+                <Questions key={question.id}{...question}/>
+              )
+            })
+          }
         </div>
     </div>
   );
